@@ -11,8 +11,9 @@ app.use(cors());
 app.use("/auth", userRouter);
 //cnnecting to the mogoDb server
 mongoose.connect(
-  "mongodb+srv://Kiranbandla:Kiranbandla@cluster0.7z4juun.mongodb.net/recipiedb"
+  "mongodb://Kiranbandla:Kiranbandla@cluster0-shard-00-00.7z4juun.mongodb.net:27017,cluster0-shard-00-01.7z4juun.mongodb.net:27017,cluster0-shard-00-02.7z4juun.mongodb.net:27017/recipiedb?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority"
 );
+
 //port listening
 app.listen(3001, () => {
   console.log("listening on http://localhost:3001");
